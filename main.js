@@ -12,14 +12,12 @@ var navState = {
 
 var navToggle = function(){
 	if(navState.showing){
-		navNode.style.visibility = "hidden"
 		navNode.style.transition = "1s all ease"
 		navNode.style.opacity = 0
 		buttonNode.textContent = "Show Nav"
 		navState.showing = false
 	}
-	else{
-		navNode.style.visibility = "visible"
+	else {
 		navNode.style.transition = "1s all ease"
 		navNode.style.opacity = 1
 		buttonNode.textContent = "Hide Nav"
@@ -46,14 +44,14 @@ newInputBox.type = "text"
 newInputBox.className = "guestList_input"
 var inputNode = document.querySelector("#add-guest input")
 
+answerBoxNode.insertBefore(newInputBox, answerBoxNode.childNodes[0]) 
+
 var entryState = {
 	showing: true                                                          
 }
  
 
 //Declare Functions and other tools to be used 
-
-answerBoxNode.insertBefore(newInputBox, answerBoxNode.childNodes[0]) 
 
 var enterGuest = function(eventObj){
 	if(eventObj.keyCode === 13){
@@ -133,7 +131,7 @@ var guestBonus = function(eventObj){
 		removeButton.className = "guestList_button"
 		removeButton.textContent = "X"
 
-		//Append new button Node to li Parent Node
+		//Append new button Node to li Node
 		liNode.appendChild(removeButton)
 
 		//Clear Input Box
